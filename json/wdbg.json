@@ -140,9 +140,19 @@
 		"link":"https://wdbgames.github.io/server1/doom/"
 	},
 	{
+		"id":"79",
+		"title":"Emulator",
+		"link": "https://wdbgames.github.io/server3/emulator/"
+	},
+	{
 		"id":"27",
 		"title":"Flappy Bird",
 		"link":"https://wdbgames.github.io/server1/flappy_bird/"
+	},
+	{
+		"id":"80",
+		"title":"Flash",
+		"link": "https://wdbgames.github.io/server3/flash/"
 	},
 	{
 		"id":"87",
@@ -152,387 +162,266 @@
 	{
 		"id":"29",
 		"title":"Granny",
-		"tags":[
-			"Strategy"
-		]
+		"link": "https://wdbgames.github.io/server3/granny/"
 	},
 	{
 		"id":"30",
 		"title":"Handulum+",
-		"tags":[
-			
-		]
+		"link": "https://wdbgames.github.io/server1/handulum+/"
 	},
 	{
 		"id":"31",
 		"title":"HexaClicker",
-		"tags":[
-			"Idle"
-		]
+		"link": "https://wdbgames.github.io/server1/hexaclicker/"
 	},
 	{
 		"id":"32",
 		"title":"Idle Breakout",
-		"tags":[
-			"Idle"
-		]
+		"link": "https://wdbgames.github.io/server1/idle_breakout/"
 	},
 	{
 		"id":"33",
 		"title":"Idle Dice",
-		"tags":[
-			"Idle"
-		]
+		"link": "https://wdbgames.github.io/server1/idle_dice/"
 	},
 	{
 		"id":"34",
 		"title":"Jelly Mario",
-		"tags":[
-			"Platformer"
-		]
+		"link": "https://wdbgames.github.io/server1/jelly_mario/"
 	},
 	{
 		"id":"35",
 		"title":"Just a Platformer",
-		"tags":[
-			"Platformer"
-		]
+		"link": "https://wdbgames.github.io/server3/just_a_platformer/"
 	},
 	{
 		"id":"36",
 		"title":"Level Devil",
-		"tags":[
-			"Platformer"
-		]
+		"link": "https://wdbgames.github.io/server1/level_devil/"
 	},
 	{
 		"id":"37",
 		"title":"Magic Cat Academy",
-		"tags":[
-			
-		]
+		"link": "https://wdbgames.github.io/server1/magic_cat_academy/"
 	},
 	{
 		"id":"38",
 		"title":"Minesweeper",
-		"tags":[
-			"Strategy"
-		]
+		"link": "https://wdbgames.github.io/server1/minesweeper/"
 	},
 	{
 		"id":"39",
 		"title":"Mini Golf",
-		"tags":[
-			
-		]
+		"link": "https://wdbgames.github.io/server1/mini_golf/"
 	},
 	{
 		"id":"40",
 		"title":"Moto X3M",
-		"tags":[
-			
-		]
+		"link": "https://wdbgames.github.io/server1/moto_x3m/"
 	},
 	{
 		"id":"41",
 		"title":"Mr. Mine",
-		"tags":[
-			"Idle"
-		]
+		"link": "https://wdbgames.github.io/server1/mr_mine/"
 	},
 	{
 		"id":"84",
 		"title":"N-gon",
-		"tags":[
-			"Beta"
-		]
+		"link": "https://wdbgames.github.io/server1/n-gon/"
 	},
 	{
 		"id":"42",
 		"title":"OvO",
-		"tags":[
-			"Platformer"
-		]
+		"link": "https://wdbgames.github.io/server3/ovo/"
 	},
 	{
 		"id":"43",
 		"title":"Pen Football",
-		"tags":[
-			"Sports"
-		]
+		"link": "https://wdbgames.github.io/server1/pen_football/"
 	},
 	{
 		"id":"45",
 		"title":"Pixels Filling Squares",
-		"tags":[
-			"Idle"
-		]
+		 "link": "https://wdbgames.github.io/server1/pixels_filling_squares/"
 	},
 	{
 		"id":"86",
 		"title":"Plactions",
-		"tags":[
-			"Platformer"
-		]
+		"link": "https://wdbgames.github.io/server2/plactions/"
 	},
 	{
 		"id":"47",
 		"title":"Planet Clicker",
-		"tags":[
-			"Idle"
-		]
+		"link": "https://wdbgames.github.io/server1/planet_clicker/"
 	},
 	{
 		"id":"48",
 		"title":"Plug Away",
-		"tags":[
-			
-		]
+		"link": "https://wdbgames.github.io/server1/plug_away/"
 	},
 	{
 		"id":"49",
 		"title":"Plug Away 2",
-		"tags":[
-			
-		]
+		"link": "https://wdbgames.github.io/server1/plug_away_2/"
 	},
 	{
 		"id":"50",
 		"title":"PolyTrack",
-		"tags":[
-			"Featured"
-		]
+		"link": "https://wdbgames.github.io/server3/polytrack/"
 	},
 	{
 		"id":"51",
 		"title":"Retro Bowl",
-		"tags":[
-			"Sports",
-			"Featured"
-		]
+		"link": "https://wdbgames.github.io/server1/retro_bowl/"
 	},
 	{
 		"id":"52",
 		"title":"Retro Flight Sim",
-		"tags":[
-			
-		]
+		"link": "https://wdbgames.github.io/server1/retro_flight_sim/"
 	},
 	{
 		"id":"53",
 		"title":"Rooftop Snipers 2",
-		"tags":[
-			
-		]
+		"link": "https://wdbgames.github.io/server1/rooftop_snipers_2/"
 	},
 	{
 		"id":"54",
 		"title":"Run 3",
-		"tags":[
-			"Beta"
-		]
+		"link": "https://jamestore214.github.io/g11/run-3/"
 	},
 	{
 		"id":"55",
 		"title":"Sand Game",
-		"tags":[
-			"Sandbox"
-		]
+		"link": "https://wdbgames.github.io/server1/sand_game/"
 	},
 	{
 		"id":"56",
 		"title":"Sandboxels",
-		"tags":[
-			"Sandbox"
-		]
+		"link": "https://wdbgames.github.io/server1/sandboxels/"
 	},
 	{
 		"id":"81",
 		"title":"Sandspiel",
-		"tags":[
-			"Sandbox"
-		]
+		"link": "https://wdbgames.github.io/server1/sandspiel/"
 	},
 	{
 		"id":"57",
 		"title":"Sandtris",
-		"tags":[
-			"Strategy"
-		]
+		"link": "https://wdbgames.github.io/server1/sandtris/"
 	},
 	{
 		"id":"58",
 		"title":"Scratch Flight Sim",
-		"tags":[
-			
-		]
+		"link": "https://wdbgames.github.io/server1/scratch_flight_sim/"
 	},
 	{
 		"id":"59",
 		"title":"Slope",
-		"tags":[
-			"Featured"
-		]
+		"link": "https://wdbgames.github.io/server1/slope/"
 	},
 	{
 		"id":"60",
 		"title":"Slow Roads",
-		"tags":[
-			"Featured"
-		]
+		"link": "https://wdbgames.github.io/server1/slow_roads/"
 	},
 	{
 		"id":"61",
 		"title":"Snow Rider 3D",
-		"tags":[
-			"Featured"
-		]
+		"link": "https://wdbgames.github.io/server1/snow_rider/"
 	},
 	{
 		"id":"62",
 		"title":"Soccer Random",
-		"tags":[
-			"Sports"
-		]
+		"link": "https://wdbgames.github.io/server1/soccer_random/"
 	},
 	{
 		"id":"82",
 		"title":"Space Waves",
-		"tags":[
-			"Featured"
-		]
+		"link": "https://wdbgames.github.io/server1/space_waves/"
 	},
 	{
 		"id":"63",
 		"title":"Spacebar Clicker",
-		"tags":[
-			"Idle"
-		]
+		"link": "https://wdbgames.github.io/server1/spacebar_clicker/"
 	},
 	{
 		"id":"64",
 		"title":"Stack",
-		"tags":[
-			
-		]
+		"link": "https://wdbgames.github.io/server1/stack/"
 	},
 	{
 		"id":"65",
 		"title":"Stickman Hook",
-		"tags":[
-			
-		]
+		"link": "https://wdbgames.github.io/server1/stickman_hook/"
 	},
 	{
 		"id":"66",
 		"title":"Surf",
-		"tags":[
-			"Featured"
-		]
+		"link": "https://wdbgames.github.io/server1/surf/"
 	},
 	{
 		"id":"67",
 		"title":"Tag",
-		"tags":[
-			
-		]
+		"link": "https://wdbgames.github.io/server1/tag/"
 	},
 	{
 		"id":"68",
 		"title":"The Final Earth 2",
-		"tags":[
-			"Idle"
-		]
+		"link": "https://wdbgames.github.io/server1/the_final_earth_2/"
 	},
 	{
 		"id":"70",
 		"title":"Townscaper",
-		"tags":[
-			"Sandbox"
-		]
+		"link": "https://wdbgames.github.io/server3/townscaper/"
 	},
 	{
 		"id":"89",
 		"title":"Tung Tung Wave Trials",
-		"tags":[
-			"Strategy"
-		]
+		"link": "https://htracks.github.io/tung-tung-wave-trials/"
 	},
 	{
 		"id":"71",
 		"title":"Tunnel Rush",
-		"tags":[
-			"Featured"
-		]
+		"link": "https://wdbgames.github.io/server1/tunnel_rush/"
 	},
 	{
 		"id":"72",
 		"title":"TWHG",
-		"tags":[
-			"Strategy"
-		]
+		"link": "https://wdbgames.github.io/server1/twhg/"
 	},
 	{
 		"id":"73",
 		"title":"TWHG 2",
-		"tags":[
-			"Strategy"
-		]
+		"link": "https://wdbgames.github.io/server1/twhg_2/"
 	},
 	{
 		"id":"74",
 		"title":"Undertale",
-		"tags":[
-			"Beta"
-		]
+		"link": "https://wdbgames.github.io/server2/undertale/"
 	},
 	{
 		"id":"75",
 		"title":"Universal Paperclips",
-		"tags":[
-			"Idle"
-		]
+		"link": "https://wdbgames.github.io/server1/universal_paperclips/"
 	},
 	{
 		"id":"76",
 		"title":"Volley Random",
-		"tags":[
-			"Sports"
-		]
+		"link": "https://wdbgames.github.io/server1/volley_random/"
 	},
 	{
 		"id":"88",
 		"title":"Voxel",
-		"tags":[
-			"Sandbox"
-		]
+		"link": "https://wdbgames.github.io/voxel/"
 	},
 	{
 		"id":"77",
 		"title":"Wordle",
-		"tags":[
-			"Strategy"
-		]
+		"link": "https://wdbgames.github.io/server1/wordle/"
 	},
 	{
 		"id":"78",
 		"title":"Worldle",
-		"tags":[
-			"Strategy"
-		]
-	},
-	{
-		"id":"79",
-		"title":"Emulator",
-		"tags":[
-			"Featured"
-		]
-	},
-	{
-		"id":"80",
-		"title":"Flash",
-		"tags":[
-			"Featured"
-		]
+		"link": "https://wdbgames.github.io/server1/worldle/"
 	}
 ]
