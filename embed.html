@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>WDB Games</title>
+		<style>
+			html, body {
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+			}
+			iframe {
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				border: none;
+				display: block;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<iframe id="viewer"></iframe>
+		<script>
+			const params = new URLSearchParams(window.location.search);
+			const type = params.get("t");
+			const id = params.get("id");
+			const iframe = document.getElementById("viewer");
+			
+			if (true) {
+				fetch("json/wdbg.json").then(res => res.json()).then(data => {
+					const entry = data.find(e => e.id === id);
+					iframe.src = entry?.link || "about:blank";
+				}).catch(error => {
+					console.error(error);
+				});
+			}
+		</script>
+	</body>
+
+</html>
