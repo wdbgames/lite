@@ -1,21 +1,29 @@
 const global = {
 	navbar: document.getElementById("navbar"),
 	container: document.getElementById("container"),
-	btn: 0
+	btnSelected: 0,
+	btn: []
 }
 
-function createBtn(id, title, url) {
-	if(url) {
-		// SETTINGS LOGIC
-		return;
+function createBtn(id, title) {
+	global.btn[id] = document.createElement("button");
+	global.btn[id].textContent = title;
+	global.btn[id].classList.add("navbar-button");
+	if(id == global.btnSelected) {
+		global.btn[id].classList.add("active");
 	}
 
-	const btn = document.createElement("button");
-	btn.textContent = title;
-	btn.className = "navbar-button";
-	btn.onclick = () => {
+	global.btn[id].onclick = () => {
 		global.container.innerHTML = null;
-		global.btn = id;
+		global.btnSelected = id;
+		for(let i = 0; i < global.btn.length; ++i) {
+			if(global.btnSelected == i) {
+				global.btn[i].classList.add("active");
+			} else {
+				global.btn[i].classList.remove("active");
+			}
+		}
+
 		switch(id) {
 			case 0:
 				loadWDBG();
@@ -28,7 +36,7 @@ function createBtn(id, title, url) {
 				break;
 		}
  	}
-	global.navbar.appendChild(btn);
+	global.navbar.appendChild(global.btn[id]);
 }
 
 function createBox(imgSrc, title, url) {
@@ -45,6 +53,7 @@ function createBox(imgSrc, title, url) {
 	const a = document.createElement("a");
 	a.textContent = title;
 	a.href = url;
+	a.target = "_blank";
 	box.appendChild(a);
 	
 	global.container.appendChild(box);

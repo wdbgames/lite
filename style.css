@@ -3,6 +3,8 @@
 	--background-navbar: #111111;
 	--background-button: #333333;
 	--background-button-hover: #444444;
+	--background-button-active: #6666ff;
+	--background-button-active-hover: #4d4dff;
 	--background-container: #1e1e1e;
 	--background-box: #2a2a2a;
 	--text: #dddddd;
@@ -11,14 +13,13 @@
 
 body {
 	background: var(--background);
-	color: white;
+	color: var(--text);
 	font-family: Arial;
 	margin: 0;
 	padding: 0;
 }
 
 .navbar {
-	width: 100%;
 	height: 32px;
 	background: var(--background-navbar);
 	justify-content: left;
@@ -37,6 +38,15 @@ body {
 
 .navbar-button:hover {
 	background: var(--background-button-hover);
+}
+
+.navbar-button.active {
+	background: var(--background-button-active);
+}
+
+.navbar-button.active:hover {
+	background: var(--background-button-active-hover);
+
 }
 
 .container {
