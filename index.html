@@ -25,26 +25,28 @@
 				}
 
 				global.btn[id].onclick = () => {
-					global.container.innerHTML = null;
-					global.btnSelected = id;
-					for(let i = 0; i < global.btn.length; ++i) {
-						if(global.btnSelected == i) {
-							global.btn[i].classList.add("active");
-						} else {
-							global.btn[i].classList.remove("active");
+					if(global.btnSelected != id) {
+						global.container.innerHTML = null;
+						global.btnSelected = id;
+						for(let i = 0; i < global.btn.length; ++i) {
+							if(global.btnSelected == i) {
+								global.btn[i].classList.add("active");
+							} else {
+								global.btn[i].classList.remove("active");
+							}
 						}
-					}
 
-					switch(id) {
-						case 0:
-							loadWDBG();
-							break;
-						case 1:
-							loadGN();
-							break;
-						case 2:
-							loadCMG();
-							break;
+						switch(id) {
+							case 0:
+								loadWDBG();
+								break;
+							case 1:
+								loadGN();
+								break;
+							case 2:
+								loadCMG();
+								break;
+						}
 					}
 				}
 				global.navbar.appendChild(global.btn[id]);
@@ -55,6 +57,7 @@
 				box.className = "box";
 
 				const img = document.createElement("img");
+				img.loading = "lazy";
 				img.src = imgSrc;
 				img.onerror = () => {
 					img.src = "images/error.png";
@@ -102,20 +105,36 @@
 			}
 
 			async function loadCMG() {
+				const popular = false;
+
 				try {
 					const response = await fetch("cmatgame_games_with_levels.json");
 					const data = await response.json();
 					
-					let ids = [
-						...data.trendy,
-						...data.top9,
-					]
-					ids = [...new Set(ids)];
-					
-					const games = ids.map((id) => data.game.find((game) => game.id == id))
+					let games = [];
+					if(popular) {
+						let ids = [
+							...data.trendy,
+							...data.top9,
+						]
+						ids = [...new Set(ids)];
+
+						games = ids.map((id) => data.game.find((game) => game.id == id));
+					} else {
+						for(let i = 0; i < data.game.length; ++i) {
+							games.push(data.game[i]);
+						}
+					}
 						
 					games.forEach(game => {
-						createBox(`https://www.coolmathgames.com/${game.si}`, game.title, `embed.html?t=2&id=${game.id}`);
+						let imgSrc;
+						if(!game.si) {
+							imgSrc = "https://www.coolmathgames.com/sites/default/files/styles/og_image_game_page/public/" + game.og;
+						} else {
+							imgSrc = "https://www.coolmathgames.com/" + game.si;
+						}
+
+						createBox(imgSrc, game.title, `embed.html?t=2&id=${game.id}`);
 					});
 				} catch (error) {
 					console.error(error);
