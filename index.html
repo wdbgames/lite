@@ -1,15 +1,129 @@
 <!DOCTYPE html>
 <html>
-
 	<head>
 		<title>WDB Games</title>
 		<link rel="stylesheet" href="style.css">
 	</head>
-	
 	<body>
 		<div id="navbar" class="navbar"></div>
 		<div id="container" class="container"></div>
 		<script src="main.js"></script>
+		<script>
+			const global = {
+				navbar: document.getElementById("navbar"),
+				container: document.getElementById("container"),
+				btnSelected: 0,
+				btn: []
+			}
+
+			function createBtn(id, title) {
+				global.btn[id] = document.createElement("button");
+				global.btn[id].textContent = title;
+				global.btn[id].classList.add("navbar-button");
+				if(id == global.btnSelected) {
+					global.btn[id].classList.add("active");
+				}
+
+				global.btn[id].onclick = () => {
+					global.container.innerHTML = null;
+					global.btnSelected = id;
+					for(let i = 0; i < global.btn.length; ++i) {
+						if(global.btnSelected == i) {
+							global.btn[i].classList.add("active");
+						} else {
+							global.btn[i].classList.remove("active");
+						}
+					}
+
+					switch(id) {
+						case 0:
+							loadWDBG();
+							break;
+						case 1:
+							loadGN();
+							break;
+						case 2:
+							loadCMG();
+							break;
+					}
+				}
+				global.navbar.appendChild(global.btn[id]);
+			}
+
+			function createBox(imgSrc, title, url) {
+				const box = document.createElement("div");
+				box.className = "box";
+
+				const img = document.createElement("img");
+				img.src = imgSrc;
+				img.onerror = () => {
+					img.src = "images/error.png";
+				}
+				box.appendChild(img);
+				
+				const a = document.createElement("a");
+				a.textContent = title;
+				a.href = url;
+				a.target = "_blank";
+				box.appendChild(a);
+				
+				global.container.appendChild(box);
+			}
+
+			function load() {
+				createBtn(0, "WDBG");
+				createBtn(1, "GN");
+				createBtn(2, "CMG");
+				loadWDBG();
+			}
+
+			async function loadWDBG() {
+				fetch("embed.json")
+					.then(response => response.json())
+					.then(data => {
+						data.forEach(box => {
+							createBox(`images/${box.id}.png`, box.title, `embed.html?t=0&id=${box.id}`);
+						});
+					})
+					.catch(error => console.error(error));
+			}
+
+			async function loadGN() {
+				try {
+					const response = await fetch("https://cdn.jsdelivr.net/gh/gn-math/assets/zones.json");
+					const zones = await response.json();
+					zones.forEach(zone => {
+						const imgSrc = zone.cover.replace("{COVER_URL}", "https://cdn.jsdelivr.net/gh/gn-math/covers@main");
+						createBox(imgSrc, zone.name, `embed.html?t=1&id=${zone.id}`)
+					});
+				} catch (error) {
+					console.error(error);
+				}
+			}
+
+			async function loadCMG() {
+				try {
+					const response = await fetch("cmatgame_games_with_levels.json");
+					const data = await response.json();
+					
+					let ids = [
+						...data.trendy,
+						...data.top9,
+					]
+					ids = [...new Set(ids)];
+					
+					const games = ids.map((id) => data.game.find((game) => game.id == id))
+						
+					games.forEach(game => {
+						createBox(`https://www.coolmathgames.com/${game.si}`, game.title, `embed.html?t=2&id=${game.id}`);
+					});
+				} catch (error) {
+					console.error(error);
+				}
+			}
+
+			load();
+		</script>
 	</body>
 
 </html>
