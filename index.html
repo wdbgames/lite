@@ -126,10 +126,10 @@
 						
 					games.forEach(game => {
 						let imgSrc;
-						if(!game.si) {
-							imgSrc = "https://www.coolmathgames.com/sites/default/files/styles/og_image_game_page/public/" + game.og;
-						} else {
+						if(game.si) {
 							imgSrc = "https://www.coolmathgames.com/" + game.si;
+						} else {
+							imgSrc = "https://www.coolmathgames.com/sites/default/files/styles/og_image_game_page/public/" + game.og;
 						}
 
 						createBox(imgSrc, game.title, `embed.html?t=2&id=${game.id}`);
