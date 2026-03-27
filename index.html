@@ -86,7 +86,7 @@
 				global.container.appendChild(box);
 			}
 
-			function createSetting(name, item, placeholder) {
+			function createSetting(name, item, placeholder, value) {
 				const setting = document.createElement("div");
 				setting.className = "setting";
 
@@ -96,6 +96,7 @@
 
 				const input = document.createElement("input");
 				input.placeholder = placeholder;
+				input.value = value;
 				input.id = item;
 				setting.appendChild(input);
 
@@ -115,7 +116,7 @@
 				const settings = await response.json();
 
 				settings.forEach(setting => {
-					createSetting(setting.name, setting.item, localStorage.getItem(setting.item) || setting.placeholder);
+					createSetting(setting.name, setting.item, setting.placeholder, localStorage.getItem(setting.item) || "");
 				});
 
 				const button = document.createElement("button");
@@ -132,7 +133,8 @@
 			}
 
 			async function loadWDBG() {
-				fetch("embed.json")
+				const json = localStorage.getItem("jsonUrl") || "embed.json";
+				fetch(json)
 					.then(response => response.json())
 					.then(data => {
 						data.forEach(box => {

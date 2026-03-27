@@ -1,7 +1,9 @@
-const title = localStorage.getItem("title") || "Google";
-const favicon = localStorage.getItem("faviconUrl") || "https://www.google.com/favicon.ico";
+const title = localStorage.getItem("title") || "WDB Games";
+const favicon = localStorage.getItem("faviconUrl") || "favicon.ico";
 const keybind = localStorage.getItem("keybind") || "v";
 const keybindUrl = localStorage.getItem("keybindUrl") || "https://www.google.com/";
+
+console.log(localStorage.getItem("title"));
 
 function load() {
     document.title = title;
@@ -15,6 +17,10 @@ function load() {
     link.href = favicon ;
 
     document.addEventListener('keydown', event => {
+        if (document.activeElement.tagName === "INPUT") {
+            return;
+        }
+
         if (event.key === keybind) {
             window.open(keybindUrl, '_blank');
         }
