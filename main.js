@@ -3,8 +3,6 @@ const favicon = localStorage.getItem("faviconUrl") || "favicon.ico";
 const keybind = localStorage.getItem("keybind") || "v";
 const keybindUrl = localStorage.getItem("keybindUrl") || "https://www.google.com/";
 
-console.log(localStorage.getItem("title"));
-
 function load() {
     document.title = title;
 
@@ -14,7 +12,8 @@ function load() {
         link.rel = 'icon';
         document.head.appendChild(link);
     }
-    link.href = favicon ;
+
+    link.href = favicon;
 
     document.addEventListener('keydown', event => {
         if (document.activeElement.tagName === "INPUT") {

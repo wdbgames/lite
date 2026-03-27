@@ -5,11 +5,13 @@
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-		<!-- TODO: CREATE IN SCRIPT -->
 		<div id="navbar" class="navbar"></div>
 		<div id="container" class="container"></div>
 		<script src="main.js"></script>
 		<script>
+			const theme = localStorage.getItem("theme") || "dark";
+			document.body.dataset.theme = theme;
+
 			const global = {
 				navbar: document.getElementById("navbar"),
 				container: document.getElementById("container"),
@@ -22,6 +24,9 @@
 				global.btn[id] = document.createElement("button");
 				global.btn[id].textContent = title;
 				global.btn[id].classList.add("button");
+				if(type == 1) {
+					global.btn[id].classList.add("settings-button");
+				}
 				global.btn[id].onclick = () => {
 					if(global.btnSelected !== id) {
 						loadBtn(id);
@@ -31,7 +36,6 @@
 			}
 
 			function loadBtn(id) {
-				console.log(id)
 				global.container.innerHTML = null;
 				global.btnSelected = id;
 				global.btn[id].classList.add("active");

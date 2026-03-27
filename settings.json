@@ -25,18 +25,8 @@
 		"placeholder": "dark"
 	},
 	{
-		"name": "CSS URL",
-		"item": "cssUrl",
-		"placeholder": "style.css"
-	},
-	{
-		"name": "JS URL",
-		"item": "jsUrl",
-		"placeholder": "main.js"
-	},
-	{
 		"name": "JSON URL",
 		"item": "jsonUrl",
-		"placeholder": "embed.js"
+		"placeholder": "embed.json"
 	}
 ]
