@@ -87,6 +87,7 @@ body {
 	margin-bottom: 16px;
 	background: var(--background-box);
 	color: var(--input-text);
+	border: 1px solid var(--input-text-placeholder);
 
 }
 

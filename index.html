@@ -96,6 +96,7 @@
 
 				const input = document.createElement("input");
 				input.placeholder = placeholder;
+				input.id = "item";
 				setting.appendChild(input);
 
 				global.container.appendChild(setting);
@@ -106,27 +107,27 @@
 				createBtn(2, 0, "GN");
 				createBtn(3, 0, "CMG");
 				createBtn(0, 1, "Settings");
-				loadBtn(1);
+				loadBtn(0);
 			}
 
 			async function loadSettings() {
-				await fetch("settings.json")
-					.then(response => response.json())
-					.then(data => {
-						data.forEach(setting => {
-							createSetting(setting.name, setting.item, setting.placeholder);
-						});
-					})
-					.catch(error => console.error(error));
+				const response = await fetch("settings.json");
+				const settings = await response.json();
+
+				settings.forEach(setting => {
+					createSetting(setting.name, setting.item, localStorage.getItem(setting.item) || setting.placeholder);
+				});
 
 				const button = document.createElement("button");
 				button.className = "button";
 				button.textContent = "Save Settings";
-				button.onClick = () => {
-					data.forEach(setting => {
-						//
+
+				button.onclick = () => {
+					settings.forEach(setting => {
+						localStorage.setItem(setting.item, document.getElementById(setting.name).value);
 					});
-				}
+				};
+
 				global.container.appendChild(button);
 			}
 
