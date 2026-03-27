@@ -1,34 +1,42 @@
 [
 	{
-		"name": "Title";
-		"item": "title";
+		"name": "Title",
+		"item": "title",
+		"placeholder": "WDB Games"
 	},
 	{
-		"name": "Favicon URL";
-		"item": "faviconUrl";
+		"name": "Favicon URL",
+		"item": "faviconUrl",
+		"placeholder": "favicon.ico"
 	},
 	{
-		"name": "Keybind";
-		"item": "keybind";
+		"name": "Keybind",
+		"item": "keybind",
+		"placeholder": "v"
 	},
 	{
-		"name": "Keybind URL";
-		"item": "keybindUrl";
+		"name": "Keybind URL",
+		"item": "keybindUrl",
+		"placeholder": "https://www.google.com/"
 	},
 	{
-		"name": "Theme";
-		"item": "theme";
+		"name": "Theme",
+		"item": "theme",
+		"placeholder": "dark"
 	},
 	{
-		"name": "CSS URL";
-		"item": "cssUrl";
+		"name": "CSS URL",
+		"item": "cssUrl",
+		"placeholder": "style.css"
 	},
 	{
-		"name": "JS URL";
-		"item": "jsUrl";
+		"name": "JS URL",
+		"item": "jsUrl",
+		"placeholder": "main.js"
 	},
 	{
-		"name": "JSON URL";
-		"item": "jsonUrl";
+		"name": "JSON URL",
+		"item": "jsonUrl",
+		"placeholder": "embed.js"
 	}
 ]

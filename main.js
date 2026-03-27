@@ -1,7 +1,7 @@
-const title = "Google";
-const favicon = "https://www.google.com/favicon.ico";
-const panicKey = "v";
-const panicUrl = "https://www.google.com/";
+const title = localStorage.getItem("title") || "Google";
+const favicon = localStorage.getItem("faviconUrl") || "https://www.google.com/favicon.ico";
+const keybind = localStorage.getItem("keybind") || "v";
+const keybindUrl = localStorage.getItem("keybindUrl") || "https://www.google.com/";
 
 function load() {
     document.title = title;
@@ -15,8 +15,8 @@ function load() {
     link.href = favicon ;
 
     document.addEventListener('keydown', event => {
-        if (event.key === panicKey) {
-            window.open(panicUrl, '_blank');
+        if (event.key === keybind) {
+            window.open(keybindUrl, '_blank');
         }
     });
 }

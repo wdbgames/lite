@@ -5,6 +5,7 @@
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
+		<!-- TODO: CREATE IN SCRIPT -->
 		<div id="navbar" class="navbar"></div>
 		<div id="container" class="container"></div>
 		<script src="main.js"></script>
@@ -12,45 +13,59 @@
 			const global = {
 				navbar: document.getElementById("navbar"),
 				container: document.getElementById("container"),
+				container: document.getElementById("container"),
 				btnSelected: 0,
 				btn: []
 			}
 
-			function createBtn(id, title) {
+			function createBtn(id, type, title) {
 				global.btn[id] = document.createElement("button");
 				global.btn[id].textContent = title;
-				global.btn[id].classList.add("navbar-button");
-				global.btn[global.btnSelected].classList.add("active");
-
+				global.btn[id].classList.add("button");
 				global.btn[id].onclick = () => {
-					if(global.btnSelected != id) {
-						global.container.innerHTML = null;
-						global.btnSelected = id;
-						for(let i = 0; i < global.btn.length; ++i) {
-							if(global.btnSelected == i) {
-								global.btn[i].classList.add("active");
-							} else {
-								global.btn[i].classList.remove("active");
-							}
-						}
-
-						switch(id) {
-							case 0:
-								loadWDBG();
-								break;
-							case 1:
-								loadGN();
-								break;
-							case 2:
-								loadCMG();
-								break;
-						}
+					if(global.btnSelected !== id) {
+						loadBtn(id);
 					}
 				}
 				global.navbar.appendChild(global.btn[id]);
 			}
 
-			function createBox(imgSrc, title, url) {
+			function loadBtn(id) {
+				console.log(id)
+				global.container.innerHTML = null;
+				global.btnSelected = id;
+				global.btn[id].classList.add("active");
+				for(let i = 0; i < global.btn.length; ++i) {
+					if(global.btnSelected !== i) {
+						global.btn[i].classList.remove("active");
+					}
+				}
+
+				if(id === 0) {
+					global.container.classList.remove("settings");
+					global.container.classList.add("settings-container");
+				} else {
+					global.container.classList.remove("settings-container");
+					global.container.classList.add("settings");
+				}
+				
+				switch(id) {
+					case 0:
+						loadSettings();
+						break;
+					case 1:
+						loadWDBG();
+						break;
+					case 2:
+						loadGN();
+						break;
+					case 3:
+						loadCMG();
+						break;
+				}
+			}
+
+			function createBox(imgSrc, name, url) {
 				const box = document.createElement("div");
 				box.className = "box";
 
@@ -63,7 +78,7 @@
 				box.appendChild(img);
 				
 				const a = document.createElement("a");
-				a.textContent = title;
+				a.textContent = name;
 				a.href = url;
 				a.target = "_blank";
 				box.appendChild(a);
@@ -71,11 +86,48 @@
 				global.container.appendChild(box);
 			}
 
+			function createSetting(name, item, placeholder) {
+				const setting = document.createElement("div");
+				setting.className = "setting";
+
+				const title = document.createElement("p");
+				title.textContent = name;
+				setting.appendChild(title);
+
+				const input = document.createElement("input");
+				input.placeholder = placeholder;
+				setting.appendChild(input);
+
+				global.container.appendChild(setting);
+			}
+
 			function load() {
-				createBtn(0, "WDBG");
-				createBtn(1, "GN");
-				createBtn(2, "CMG");
-				loadWDBG();
+				createBtn(1, 0, "WDBG");
+				createBtn(2, 0, "GN");
+				createBtn(3, 0, "CMG");
+				createBtn(0, 1, "Settings");
+				loadBtn(1);
+			}
+
+			async function loadSettings() {
+				await fetch("settings.json")
+					.then(response => response.json())
+					.then(data => {
+						data.forEach(setting => {
+							createSetting(setting.name, setting.item, setting.placeholder);
+						});
+					})
+					.catch(error => console.error(error));
+
+				const button = document.createElement("button");
+				button.className = "button";
+				button.textContent = "Save Settings";
+				button.onClick = () => {
+					data.forEach(setting => {
+						//
+					});
+				}
+				global.container.appendChild(button);
 			}
 
 			async function loadWDBG() {
