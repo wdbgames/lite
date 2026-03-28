@@ -5,30 +5,21 @@
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-		<div id="navbar" class="navbar"></div>
-		<div id="container" class="container"></div>
 		<script src="main.js"></script>
 		<script>
-			const theme = localStorage.getItem("theme") || "dark";
-			document.body.dataset.theme = theme;
+			document.body.dataset.theme = localStorage.getItem("theme") || "dark";
 
 			const global = {
-				navbar: document.getElementById("navbar"),
-				container: document.getElementById("container"),
-				container: document.getElementById("container"),
+				navbar: document.createElement("div"),
+				container: document.createElement("div"),
 				btnSelected: 0,
 				btn: []
 			}
 
-			function createBtn(id, type, title) {
+			function createBtn(id, title) {
 				global.btn[id] = document.createElement("button");
 				global.btn[id].textContent = title;
-				if(type == 1) {
-					global.btn[id].classList.add("settings-button");
-				} else {
-					global.btn[id].classList.add("button");
-				}
-
+				global.btn[id].className = id === 0 ? "settings-button" : "button";
 				global.btn[id].onclick = () => {
 					if(global.btnSelected !== id) {
 						loadBtn(id);
@@ -39,20 +30,15 @@
 
 			function loadBtn(id) {
 				global.container.innerHTML = null;
+				global.container.className = id === 0 ? "settings-container" : "boxes-container";
 				global.btnSelected = id;
-				global.btn[id].classList.add("active");
+				
 				for(let i = 0; i < global.btn.length; ++i) {
-					if(global.btnSelected !== i) {
+					if(global.btnSelected === i) {
+						global.btn[i].classList.add("active");
+					} else {
 						global.btn[i].classList.remove("active");
 					}
-				}
-
-				if(id === 0) {
-					global.container.classList.remove("settings");
-					global.container.classList.add("settings-container");
-				} else {
-					global.container.classList.remove("settings-container");
-					global.container.classList.add("settings");
 				}
 				
 				switch(id) {
@@ -110,10 +96,17 @@
 			}
 
 			function load() {
-				createBtn(1, 0, "WDBG");
-				createBtn(2, 0, "GN");
-				createBtn(3, 0, "CMG");
-				createBtn(0, 1, "");
+				global.navbar.id = "navbar";
+				global.navbar.className = "navbar";
+				document.body.appendChild(global.navbar);
+
+				global.container.id = "container";
+				document.body.appendChild(global.container);
+
+				createBtn(0, "");
+				createBtn(1, "WDBG");
+				createBtn(2, "GN");
+				createBtn(3, "CMG");
 				loadBtn(1);
 			}
 

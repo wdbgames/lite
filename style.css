@@ -28,8 +28,8 @@
 	--b: #cccccc;
 	--c: #eaeaea;
 	--d: #dadada;
-	--e: #999999;
-	--f: #b0b0b0;
+	--e: #aaaaaa;
+	--f: #b4b4b4;
 	--g: #808080;
 	--h: #8dffff;
 	--i: #66ffff;
@@ -85,7 +85,7 @@ body {
 	background: var(--i);
 }
 
-.container {
+.boxes-container {
 	padding: 8px;
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(128px, 1fr));
@@ -94,9 +94,7 @@ body {
 }
 
 .settings-button {
-    position: absolute;
-    top: 8px;
-    right: 8px;
+	padding: 8px;
     background-image: url("images/gear.png");
     background-size: contain;
     background-repeat: no-repeat;
@@ -112,6 +110,7 @@ body {
 	width: 100%;
 	box-sizing: border-box;
 	display: block;
+	padding: 8px;
 }
 
 .settings-container button {
