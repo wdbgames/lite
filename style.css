@@ -25,11 +25,11 @@
 
 [data-theme~="light"] {
 	--a: #111111;
-	--b: #cccccc;
+	--b: #dddddd;
 	--c: #eaeaea;
 	--d: #dadada;
-	--e: #aaaaaa;
-	--f: #b4b4b4;
+	--e: #bbbbbb;
+	--f: #c4c4c4;
 	--g: #808080;
 	--h: #8dffff;
 	--i: #66ffff;
@@ -55,7 +55,7 @@ body {
 	padding: 0;
 }
 
-.navbar {
+#navbar {
 	height: 32px;
 	background: var(--b);
 	justify-content: left;
