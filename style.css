@@ -15,7 +15,7 @@
 	--a: #ffffff;
 	--b: #333333;
 	--c: #000000;
-	--d: #444444;
+	--d: #4a4a4a;
 	--e: #555555;
 	--f: #666666;
 	--g: #808080;
@@ -37,11 +37,11 @@
 
 [data-theme~="light-contrast"] {
 	--a: #000000;
-	--b: #cccccc;
+	--b: #dddddd;
 	--c: #ffffff;
 	--d: #dadada;
-	--e: #999999;
-	--f: #b0b0b0;
+	--e: #bbbbbb;
+	--f: #c4c4c4;
 	--g: #808080;
 	--h: #8dffff;
 	--i: #66ffff;
