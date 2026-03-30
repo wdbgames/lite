@@ -10,12 +10,14 @@
 		<script src="main.js"></script>
 		<script>
 			document.body.dataset.theme = localStorage.getItem("theme") || "dark";
-
+		
+			const g_params = new URLSearchParams(window.location.search);
+			let g_btnSelected = Number(g_params.get("b") || 1);
+			
 			const g_cache = {};
 			const g_navbar = document.getElementById("navbar");
 			const g_container = document.getElementById("container");
 			const g_btn = [];
-			let g_btnSelected = 1;
 
 			async function fetchData(url) {
 				if (g_cache[url]) {
